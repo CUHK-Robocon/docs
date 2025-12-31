@@ -1,0 +1,25 @@
+// @ts-check
+import { defineConfig } from 'astro/config';
+import starlight from '@astrojs/starlight';
+
+// https://astro.build/config
+export default defineConfig({
+	integrations: [
+		starlight({
+			title: 'CUHK Robocon Team Docs',
+			logo: {
+				light: './src/assets/logo-black.svg',
+				dark: './src/assets/logo-white.svg',
+			},
+			sidebar: [
+				{ label: 'Getting started', slug: 'index' },
+				{
+					label: 'VESC 6',
+					items: [
+						'vesc-6/introduction',
+					],
+				},
+			],
+		}),
+	],
+});
