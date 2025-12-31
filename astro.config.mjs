@@ -4,6 +4,8 @@ import starlight from '@astrojs/starlight';
 
 // https://astro.build/config
 export default defineConfig({
+	site: "https://cuhk-robocon.github.io",
+	base: "/docs",
 	integrations: [
 		starlight({
 			title: 'CUHK Robocon Team Docs',
