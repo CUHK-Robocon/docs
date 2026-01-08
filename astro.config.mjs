@@ -21,6 +21,12 @@ export default defineConfig({
 						'vesc-6/introduction',
 					],
 				},
+				{
+					label: 'Did I ask?',
+					items: [
+						'did-i-ask/welcome',
+					],
+				},
 			],
 		}),
 	],
