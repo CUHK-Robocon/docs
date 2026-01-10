@@ -1,6 +1,5 @@
 ---
 title: Introduction to VESC 6
-description: A reference page in my new Starlight docs site.
 ---
 
 import { Aside } from '@astrojs/starlight/components';
@@ -12,4 +11,28 @@ If you forgot any step, **DO NOT** attempt blindly, check the docs again.
 If there are details unspecified in the docs, e.g. unseen buttons or pop-up warnings, ask someone who may know or make sure you know what you are doing.
 
 Misusing motor drivers can cause severe bodily injury or death.
+</Aside>
+
+VESC (Vedder Electronic Speed Controller) is a family of open source and open hardware ESCs by Benjamin Vedder.
+See the project website for more: https://vesc-project.com/.
+
+## Big Picture
+
+![VESC 6 System Block Diagram](../../../assets/vesc-6-block.png)
+
+Here is a simplified block diagram for a system with a single ESC.
+Note that, the connections in the diagram do not correspond to physical cables, the setup will be a bit more complex in reality.
+
+SBC is short for _Single-board Computer_, which is often Raspberry Pi in our case.
+More about the SBC in other topics, we will be focusing on the purple region in the diagram for this topic.
+
+The connections on the top of the VESC are for DC power input (red and grey) and control (orange).
+The SBC controls the VESC & motor through CAN Bus, a reliable communication system commonly used in automobile and industrial applications.
+
+<Aside type="note" title="Using a Power Supply">
+In the diagram, the ESC is powered by a battery, which is what we will be doing in-game.
+However, for testing purposes, it is advised to use a power supply for your safety.
+
+From our experience, power supplies are less capable in handling transient currents than LiPo battery.
+For mechanisms such as shooters, using a power supply may cause instability in performance or even random shutdowns.
 </Aside>
