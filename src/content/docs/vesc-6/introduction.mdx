@@ -18,21 +18,30 @@ See the project website for more: https://vesc-project.com/.
 
 ## Big Picture
 
-![VESC 6 System Block Diagram](../../../assets/vesc-6-block.png)
+![VESC 6 System Block Diagram](../../../assets/vesc-block-diagram.png)
 
 Here is a simplified block diagram for a system with a single ESC.
-Note that, the connections in the diagram do not correspond to physical cables, the setup will be a bit more complex in reality.
+Note that, the connections in the diagram may not correspond to physical cables.
+The setup will be a bit more complex in reality, which you will see in the upcoming chapters.
 
-SBC is short for _Single-board Computer_, which is often Raspberry Pi in our case.
-More about the SBC in other topics, we will be focusing on the purple region in the diagram for this topic.
+##### The Purple Region
 
-The connections on the top of the VESC are for DC power input (red and grey) and control (orange).
-The SBC controls the VESC & motor through CAN Bus, a reliable communication system commonly used in automobile and industrial applications.
+More about the battery and SBC in other topics, we will be focusing on the purple region in this topic.
+Setting up and understanding the purple region is a prerequisite of using SBC for control anyway.
 
-<Aside type="note" title="Using a Power Supply">
-In the diagram, the ESC is powered by a battery, which is what we will be doing in-game.
-However, for testing purposes, it is advised to use a power supply for your safety.
+##### Power over Red & Grey
 
-From our experience, power supplies are less capable in handling transient currents than LiPo battery.
-For mechanisms such as shooters, using a power supply may cause instability in performance or even random shutdowns.
-</Aside>
+The red and grey connections on the top of the VESC are the DC power input.
+
+It doesn't have to be a battery.
+In later chapters, you will learn how to choose your source and the gotchas.
+
+##### Control over Orange/Blue
+
+Our ESC can be controlled through either CAN Bus (orange) or USB (blue).
+
+CAN Bus is used in competition for its reliability.
+Control is done programmatically with the SBC (Single-board Computer), which is often Raspberry Pi in our case.
+However, it is out of scope for now.
+
+In this topic, we will be setting up and controlling the VESC & motor through USB.

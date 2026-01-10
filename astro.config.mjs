@@ -14,7 +14,7 @@ export default defineConfig({
 				dark: './src/assets/logo-white.svg',
 			},
 			sidebar: [
-				{ label: 'Getting started', slug: 'index' },
+				{ label: 'Getting Started', slug: 'index' },
 				{
 					label: 'VESC 6',
 					items: [
